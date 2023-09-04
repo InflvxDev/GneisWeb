@@ -10,5 +10,6 @@ export {Habitacion} from './habitacion/habitacion';
 export {TipoHabitacion} from './habitacion/tipo-habitacion';
 
 export {Reporte} from './reserva/reporte';
+export {Cliente} from './reserva/cliente';
 export {Reserva} from './reserva/reserva';
 
