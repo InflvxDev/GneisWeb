@@ -1,1 +1,80 @@
-<p>layout works!</p>
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+         
+ 
+         <button mat-icon-button (click)="sidenav.toggle()">
+             <mat-icon>menu</mat-icon>
+         </button>
+
+         <a mat-button="" routerLink="/page" class="logo">Gneis<span class="versionlogo">v0.2</span></a>
+        <span class="spacer"></span>
+ 
+    </mat-toolbar-row>
+ </mat-toolbar>
+
+
+ <mat-sidenav-container>
+        <mat-sidenav #sidenav opened="true" mode="side" >
+            <mat-nav-list>
+    
+                <mat-list-item routerLink="/page/dashboard">
+                    <mat-icon mat-list-icon color="primary" class="icono">dashboard</mat-icon>
+                    <span mat-line class="option">DashBoard</span>
+                </mat-list-item>
+                
+                <mat-list-item routerLink="/page/usuarios">
+                    <mat-icon mat-list-icon color="primary" class="icono">manage_accounts</mat-icon>
+                    <span mat-line class="option">Usuarios</span>
+                </mat-list-item>
+                
+                <mat-list-item routerLink="/page/habitaciones">
+                    <mat-icon mat-list-icon color="primary" class="icono">hotel</mat-icon>
+                    <span mat-line class="option">Habitaciones</span>
+                </mat-list-item>
+                
+                <mat-list-item routerLink="/page/clientes">
+                    <mat-icon mat-list-icon color="primary" class="icono">groups</mat-icon>
+                    <span mat-line class="option">Clientes</span>
+                </mat-list-item>
+                
+                <mat-list-item routerLink="/page/reservas">
+                    <mat-icon mat-list-icon color="primary" class="icono">room_service</mat-icon>
+                    <span mat-line class="option">Reservar</span>
+                </mat-list-item>
+
+                
+                
+                <div class="container">
+
+                    <div class="history"></div>
+
+                    <mat-list-item  routerLink="/page/historial_reservas">
+                        <mat-icon mat-list-icon color="primary" class="icono">edit_note</mat-icon>
+                        <span mat-line class="option">Historial Reservas</span>
+                    </mat-list-item>
+                    
+                    <mat-list-item routerLink="/page/reportes">
+                        <mat-icon mat-list-icon color="primary" class="icono">receipt</mat-icon>
+                        <span mat-line class="option">Reportes</span>
+                    </mat-list-item>
+                </div>
+    
+            </mat-nav-list>
+        </mat-sidenav>
+    
+        <mat-sidenav-content>
+            <div style="height:90vh;">
+                <router-outlet></router-outlet>
+            </div>
+        </mat-sidenav-content>
+            
+    </mat-sidenav-container>
+
+
+
+
+    
+
+    
+

@@ -1,0 +1,120 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.nav-container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.versionlogo{
+    font-size: 15px;
+    color: black;
+}
+
+.logo{
+    font-size: 30px;
+}
+
+mat-toolbar{
+    background-color: white;
+}
+
+
+.body-container{
+    display: flex;
+    padding-top: 20px;
+}
+
+.section1, .section2 {
+    width: 50%;
+}
+
+
+
+img{
+    width: 500px;
+    height: 500px;
+}
+
+.section2{
+    padding-top: 70px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    padding-right: 100px;
+    
+}
+
+.section1{
+    padding-left: 90px;
+}
+
+.loginCard{
+    max-width: 400px !important;
+    margin: 2em auto;
+    text-align: center;
+    max-height: 600px;
+   
+}
+
+.header{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.title{
+    color: #00897b;
+}
+
+span{
+    font-family: Poppins;
+    font-size: 15px;
+    
+}
+
+.full-width{
+    width: 80%;
+}
+
+mat-card-content {
+    padding-bottom: 25px;
+}
+
+@media (max-width: 900px) {
+
+    .nav-container {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .button-container {
+        margin-right: 0;
+    }
+
+    .body-container {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .section1, .section2 {
+        width: 100%;
+        padding: 0px;
+        text-align: center;
+    }
+
+    .section2 {
+        padding-top: 70px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    img {
+        width: 0px;
+        height: 0px;
+    }
+}
