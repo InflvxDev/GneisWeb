@@ -1,0 +1,1 @@
+export {ModalUsuarioComponent} from './modal-usuario/modal-usuario.component';

@@ -27,6 +27,8 @@ export class ModalUsuarioComponent {
     private usuarioService: UsuarioService,
     private rolService: RolService,
     private utilityService: UtilityService) {
+
+
       this.formUsuario = this.fb.group({
         nombre: ["", Validators.required],
         correo: ["", Validators.required],
@@ -35,7 +37,7 @@ export class ModalUsuarioComponent {
         esActivo: ["1", Validators.required]
 
       });
-      
+  
       if(data != null){
         this.tituloAccion = 'Editar';
         this.botonAccion = 'Actualizar';

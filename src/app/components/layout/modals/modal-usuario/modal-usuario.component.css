@@ -5,5 +5,16 @@ mat-form-field{
 }
 
 form{
-    width: 350px;
+    width: 400px;
+}
+
+.form-container{
+    padding-top: 20px;
+}
+
+@media (max-width: 550px) {
+
+    form{
+        width: 250px;
+    }
 }
