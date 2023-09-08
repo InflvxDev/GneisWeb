@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { DashboardComponent, UsuarioComponent, HabitacionComponent, ReservaComponent, HistorialReservasComponent, ReporteComponent, ClienteComponent } from './pages/pages';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ModalUsuarioComponent } from './modals/modal-usuario/modal-usuario.component';
 
 
 
@@ -16,7 +17,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ReservaComponent,
     HistorialReservasComponent,
     ReporteComponent,
-    ClienteComponent
+    ClienteComponent,
+    ModalUsuarioComponent
   ],
   imports: [
     CommonModule,
