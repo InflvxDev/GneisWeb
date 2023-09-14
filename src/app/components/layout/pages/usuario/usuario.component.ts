@@ -88,7 +88,7 @@ export class UsuarioComponent implements AfterViewInit {
   eliminarUsuario(usuario: Usuario){
     Swal.fire({
       title: '¿Está seguro de eliminar el usuario?',
-      text: "Esta acción no se puede revertir",
+      text: "Esta acción no se puede revertir!",
       icon: 'warning',
       confirmButtonColor: '#00897b',
       confirmButtonText: 'Si, eliminar',

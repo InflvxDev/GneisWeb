@@ -1,0 +1,73 @@
+h1 {
+    margin: 20px 0px 0px 40px;
+    color: #00897B;
+}
+
+mat-card {
+    margin: 20px 40px 40px 40px;
+    
+}
+
+mat-card-title {
+    padding: 10px;
+}
+
+table{
+    width: 100%;
+}
+
+mat-form-field {
+    padding: 10px;
+    width: 98%; 
+    font-size: 14px;
+}
+
+.button-container {
+    display: flex; 
+    gap: 10px; 
+    align-items: center; 
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+mat-cell {
+    max-width: 200px; /* Ajusta el valor según tus necesidades */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; /* Trunca el texto si es necesario */
+}
+
+
+/* Estilos para pantallas menores o iguales a 900px */
+@media (max-width: 900px) {
+    h1 {
+        margin-top: 20px;
+    }
+
+    mat-card {
+        margin: 20px;
+    }
+
+    mat-card-title {
+        text-align: center; /* Centra el botón en pantalla pequeña */
+    }
+
+    mat-form-field {
+        width: 100%; /* Ocupa todo el ancho disponible */
+    }
+
+    .button-container {
+        justify-content: center; /* Centra los botones en pantalla pequeña */
+    }
+
+    
+    table {
+        font-size: 12px; /* Ajusta el tamaño de fuente según tus necesidades */
+    }
+    
+    mat-cell {
+        max-width: 150px; /* Ajusta el valor según tus necesidades */
+    }
+}
