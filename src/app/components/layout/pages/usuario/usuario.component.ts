@@ -41,9 +41,8 @@ export class UsuarioComponent implements AfterViewInit {
   obtenerUsuarios() {
     this.usuarioService.lista().subscribe({
       next : (data) => {
-        console.log(data);
         if(data.isSuccess){
-          
+          data.value.sort((a: any, b: any) => a.id - b.id);
           this.listaUsuarios.data = data.value;
         }
         else{
@@ -63,6 +62,8 @@ export class UsuarioComponent implements AfterViewInit {
     const filterValue = (evento.target as HTMLInputElement).value;
     this.listaUsuarios.filter = filterValue.trim().toLowerCase();
   }
+
+  
 
   nuevoUsuario(){
     this.dialog.open(ModalUsuarioComponent, {

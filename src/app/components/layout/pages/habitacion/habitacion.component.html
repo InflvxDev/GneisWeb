@@ -1,1 +1,87 @@
-<p>habitacion works!</p>
+<h1>Habitaciones</h1>
+
+<mat-card>
+    <mat-card-title>
+        <button class="agregar" mat-raised-button color="primary" (click)="nuevaHabitacion()">
+            <mat-icon mat-list-icon>add</mat-icon> Nueva Habitacion
+        </button>
+    </mat-card-title>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-content class="dashboard-card-content">
+
+        <mat-form-field appearance="outline">
+            <mat-label>Buscar</mat-label>
+            <input matInput (keyup)="aplicarFiltroTabla($event)" #input>
+        </mat-form-field>
+
+        <div class="mat-elevation-z2">
+            <div class="table-container">
+                <table mat-table [dataSource]="listaHabitaciones">
+
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> No. </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                    </ng-container>
+                    
+                    <ng-container matColumnDef="descripcion">
+                        <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+                        <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+                    </ng-container>
+                    
+                    <ng-container matColumnDef="descripcionTipo">
+                        <th mat-header-cell *matHeaderCellDef> Tipo </th>
+                        <td mat-cell *matCellDef="let element"> {{element.descripcionTipo}} </td>
+                    </ng-container>
+                    
+                    <ng-container matColumnDef="precio">
+                        <th mat-header-cell *matHeaderCellDef> Precio </th>
+                        <td mat-cell *matCellDef="let element"> {{element.precio | number:'1.0-0'}} </td>
+                    </ng-container>
+                    
+                    <ng-container matColumnDef="disponibilidad">
+                        <th mat-header-cell *matHeaderCellDef> Estado </th>
+                        <td mat-cell *matCellDef="let element"> {{element.disponibilidad == true? 'Disponible' : 'No Disponible'}} </td>
+                    </ng-container>
+                    
+                    <ng-container matColumnDef="usos">
+                        <th mat-header-cell *matHeaderCellDef> Usos </th>
+                        <td mat-cell *matCellDef="let element"> {{element.usos}} </td>
+                    </ng-container>
+                    
+                    <ng-container matColumnDef="acciones">
+                        <th mat-header-cell *matHeaderCellDef style="width: 80px;"></th>
+                        <td mat-cell *matCellDef="let element">
+                            
+                            <div class="button-container">
+                                <button class="agregar" mat-icon-button color="primary" (click)="EditarHabitacion(element)">
+                                    <mat-icon>edit</mat-icon>
+                                </button>
+                                
+                                <button class="agregar" mat-icon-button color="warn" (click)="eliminarHabitacion(element)">
+                                    <mat-icon>delete</mat-icon>
+                                </button>
+                            </div>
+    
+                        </td>
+                    </ng-container>
+    
+                    <tr mat-header-row *matHeaderRowDef="columnasTabla"></tr>
+                    <tr mat-row *matRowDef="let row; columns: columnasTabla;"></tr>
+    
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="4">No se encontraron resultados "{{input.value}}"</td>
+                    </tr>
+    
+                </table>
+            </div>
+            
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+
+        </div>
+
+    </mat-card-content>
+</mat-card>

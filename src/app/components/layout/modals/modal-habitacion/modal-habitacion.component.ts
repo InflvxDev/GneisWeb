@@ -29,7 +29,7 @@ export class ModalHabitacionComponent {
   {
     this.formHabitacion = this.fb.group({
       descripcion: ["", Validators.required],
-      idTipo: ["", Validators.required],
+      idTipo: [0, Validators.required],
       precio: ["", Validators.required],
       usos: [0, Validators.required]
     })
@@ -68,7 +68,7 @@ export class ModalHabitacionComponent {
       idTipo: this.formHabitacion.get('idTipo')?.value,
       descripcionTipo: '',
       precio: this.formHabitacion.get('precio')?.value,
-      disponibilidad: true,
+      disponibilidad: this.data != null ? this.data.disponibilidad : true,
       usos: this.formHabitacion.get('usos')?.value
     }
 
