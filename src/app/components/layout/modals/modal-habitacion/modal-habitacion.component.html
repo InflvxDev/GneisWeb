@@ -1,0 +1,53 @@
+<h2 mat-dialog-title>{{tituloAccion}} Usuario</h2>
+
+<mat-dialog-content>
+    <div class="form-container">
+        <form [formGroup]="formHabitacion">
+            <mat-grid-list [cols]="1" rowHeight="90px">
+    
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Descripcion</mat-label>
+                        <input matInput autocomplete="off" formControlName="descripcion" class="input-largo">
+                        <mat-icon matSuffix>notes</mat-icon>
+                    </mat-form-field>
+                </mat-grid-tile>
+                
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Tipo de Habitacion</mat-label>
+                        <mat-select matInput formControlName="idTipo" >
+                            <mat-option *ngFor="let item of listatipos" [value]="item.id">
+                                {{item.nombre}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+                
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Precio</mat-label>
+                        <input matInput autocomplete="off" formControlName="precio" type="number">
+                        <mat-icon matSuffix>attach_money</mat-icon>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Usos</mat-label>
+                        <input matInput autocomplete="off" formControlName="usos" type="number">
+                        <mat-icon matSuffix>exposure_plus_1</mat-icon>
+                    </mat-form-field>
+                </mat-grid-tile>
+    
+            </mat-grid-list>
+        </form>
+    </div>
+   
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close color="warn">Volver</button>
+    <button mat-raised-button color="primary" [disabled]="formHabitacion.invalid" (click)="saveorEditHabitacion()">{{botonAccion}}</button>
+</mat-dialog-actions> 
